@@ -17,6 +17,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Connect to MongoDB
 connectDB();
 
+app.use("/" , (req, res) =>{
+    res.send("Deploy success")
+})
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
